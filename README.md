@@ -3,4 +3,6 @@
 
 1)Prototype video: https://github.com/orellanaf21/HealthSecureOps/blob/8694238fb2ff456fcae0ba2337e03620a2b08f0b/Prototype%20for%20High%20Fidelity%20Project.mp4
 
+Prototype for High Fidelity Project.mp4
+
 2)For this prototype, it was designed for an exceptional user experience created through the elemental designs in Figma. On a web browser view, the user starts off on the welcome page of the cyberware, "HealthSecureOps." From there, they are able to either sign in or click on the "SignUp" link to be redirected to the signup page. After the initial login, it directs them to the homepage with all the tabs/features shown. The user is able to click on the different tabs and it's redirected to its main page.
