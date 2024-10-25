@@ -6,47 +6,44 @@
     <title>Login - HealthSecureOps</title>
     <!-- Link to external CSS -->
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        /* Centering styles */
-        .container {
-            text-align: center; /* Center text */
-            margin-top: 50px; /* Optional: add space above the container */
-        }
-    </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="login-container">
         <!-- Welcome Message -->
         <h1>Welcome</h1>
-        <!-- Image under the Welcome Message with adjusted size -->
-        <img src="https://as1.ftcdn.net/v2/jpg/05/14/36/48/1000_F_514364850_xLOQX6SOY2qcjAIcTowsi3xYvHmhmvs0.jpg" alt="HealthSecureOps Logo" width="200">
+
+        <!-- Image under the Welcome Message -->
+        <img src="https://as1.ftcdn.net/v2/jpg/05/14/36/48/1000_F_514364850_xLOQX6SOY2qcjAIcTowsi3xYvHmhmvs0.jpg" alt="HealthSecureOps Logo" width="150">
+
+        <!-- Text under image -->
         <p>Login to continue to HealthSecureOps</p>
 
         <!-- Form for Login -->
         <form id="loginForm">
             <!-- Username -->
-            <div>
+            <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
+
             <!-- Password -->
-            <div>
+            <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div>    
+
             <!-- Submit Button -->
             <input type="submit" value="Login">
-                <!-- Forgot username/password text -->
-                <p>Forgot username or password?</p>
-            </div>
+
+            <!-- Forgot username/password text -->
+            <p>Forgot username or password?</p>
+
             <!-- Passcode for Signup -->
-            <div>
-                <label for="passcode">Enter Access Code to Sign Up:</label>
+            <div class="form-group">
+                <label for="passcode">Signup with Access Code:</label>
                 <input type="text" id="passcode" name="passcode" required>
             </div>
-
         </form>
     </div>
 
