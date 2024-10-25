@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Code Page</title>
+    <title>Login - HealthSecureOps</title>
     <!-- Link to external CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Centering styles */
+        .container {
+            text-align: center; /* Center text */
+            margin-top: 50px; /* Optional: add space above the container */
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Access Code Form</h2>
+        <!-- Welcome Message -->
+        <h1>Welcome</h1>
+        <!-- Image under the Welcome Message with adjusted size -->
+        <img src="https://as1.ftcdn.net/v2/jpg/05/14/36/48/1000_F_514364850_xLOQX6SOY2qcjAIcTowsi3xYvHmhmvs0.jpg" alt="HealthSecureOps Logo" width="200">
+        <p>Login to continue to HealthSecureOps</p>
 
-        <!-- Form for Access Code and Personal Information -->
-        <form id="accessCodeForm">
-            <!-- Access Code -->
-            <label for="accessCode">Access Code:</label>
-            <input type="text" id="accessCode" name="accessCode" required>
-
-            <!-- First Name -->
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
-
-            <!-- Last Name -->
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
-
+        <!-- Form for Login -->
+        <form id="loginForm">
             <!-- Username -->
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
             <!-- Password -->
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>    
             <!-- Submit Button -->
-            <input type="submit" value="Submit Code">
+            <input type="submit" value="Login">
+                <!-- Forgot username/password text -->
+                <p>Forgot username or password?</p>
+            </div>
+            <!-- Passcode for Signup -->
+            <div>
+                <label for="passcode">Enter Access Code to Sign Up:</label>
+                <input type="text" id="passcode" name="passcode" required>
+            </div>
+
         </form>
     </div>
 
