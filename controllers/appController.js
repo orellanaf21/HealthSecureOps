@@ -4,8 +4,11 @@ const model = require('../models/information');
 exports.index = (req, res, next) => {
     let searchQuery = req.query.search;
 
-    model.find(searchCriteria)
-    .sort({ price: 1 })  // Sort by price as before
-    .then(items => res.render('./item/items', { items }))
+    model.find()
+    .then(items => res.render('index', { items }))
     .catch(err => next(err));
+};
+
+exports.enterAccessCode = (req, res) => {
+    res.render('./application/accessCode');
 };
