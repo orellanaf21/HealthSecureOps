@@ -24,6 +24,7 @@ h2 {
 
 .form-group {
     margin-bottom: 15px; /* Space between fields */
+    margin-right: 15px;
 }
 
 .form-group label {
