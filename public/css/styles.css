@@ -8,12 +8,14 @@ body {
     margin: 0;
 }
 
-.login-container, .container {
+.login-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 90%; /* Adjust to take up more of the viewport */
+    max-width: 600px; /* Restrict max-width for readability */
+    height: auto; /* Allow height to adjust based on content */
 }
 
 h1, h2 {
@@ -22,7 +24,9 @@ h1, h2 {
 
 .login-container img {
     display: block;
-    margin: 0 auto 10px; /* Center the image and add spacing */
+    margin: 0 auto 10px;
+    max-width: 100%; /* Ensure image scales with the container */
+    height: auto;
 }
 
 p {
@@ -42,10 +46,16 @@ p {
 }
 
 .form-group input {
-    width: 55%; /* Adjust width of the textboxes */
+    width: 55%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .login-container input[type="submit"] {
@@ -57,9 +67,9 @@ p {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .login-container input[type="submit"]:hover {
     background-color: #0056b3;
 }
-
