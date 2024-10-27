@@ -12,3 +12,23 @@ exports.index = (req, res, next) => {
 exports.enterAccessCode = (req, res) => {
     res.render('./application/accessCode');
 };
+
+// Render the login page
+exports.showLogin = (req, res) => {
+    res.render('./application/login');
+};
+
+exports.login = (req, res) => {
+    const { username, password } = req.body;
+
+    const sampleUsername = 'user123';
+    const samplePassword = 'password';
+
+    if (username === sampleUsername && password === samplePassword) {
+        // Set session variable to indicate user is logged in
+        req.session.loggedIn = true;
+        res.redirect('/');
+    } else {
+        res.render('./application/login', { error: 'Invalid username or password' });
+    }
+};

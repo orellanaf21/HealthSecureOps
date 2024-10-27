@@ -1,5 +1,6 @@
 //require modules
 const express = require('express');
+const session = require('express-session');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
@@ -30,11 +31,22 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
+app.use(
+    session({
+        secret: 'yourSecretKey',
+        resave: false,
+        saveUninitialized: false,
+    })
+);
 
 //set up routes
 app.get('/', (req, res) => {
-    res.render('index');
-})
+    if (req.session.loggedIn) {
+        res.render('index');
+    } else {
+        res.redirect('/information/login');
+    }
+});
 
 app.use('/information', appRoutes);
 

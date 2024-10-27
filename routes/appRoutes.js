@@ -9,4 +9,10 @@ router.get('/', controller.index);
 //GET /information/accessCode: send user to accessCode page
 router.get('/accessCode', controller.enterAccessCode);
 
+// Show login form
+router.get('/login', controller.showLogin);
+
+// Handle login form submission
+router.post('/', controller.login);
+
 module.exports = router;
