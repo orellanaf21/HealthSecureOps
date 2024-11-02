@@ -27,7 +27,7 @@ exports.login = (req, res) => {
     if (username === sampleUsername && password === samplePassword) {
         // Set session variable to indicate user is logged in
         req.session.loggedIn = true;
-        res.redirect('/');
+        res.render('./application/homepage');
     } else {
         res.render('./application/login', { error: 'Invalid username or password' });
     }
