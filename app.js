@@ -66,3 +66,13 @@ app.use((err, req, res, next) => {
     res.status(err.status);
     res.render('error', {error: err})
 });
+
+const path = require('path');
+
+// Ensure Express knows where to look for views
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/currentThreats', (req, res) => {
+    res.render('currentThreats'); 
+});
