@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Case</title>
+    <link rel="stylesheet" href="/path/to/your/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="login-container">
+        <h2>Create New Case</h2>
+        <form action="/cases" method="POST"> 
+            <div class="form-group">
+                <label for="caseTitle">Case Title</label>
+                <input type="text" id="caseTitle" name="caseTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="threatType">Threat Type</label>
+                <select id="threatType" name="threatType" required>
+                    <option value="">Select Threat Type</option>
+                    <option value="Non-Urgent">Non-Urgent</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Critical">Critical</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea id="details" name="details" rows="4" required></textarea>
+            </div>
+            <input type="submit" value="Create Case">
+        </form>
+    </div>
+</body>
+</html>
