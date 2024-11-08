@@ -66,4 +66,8 @@ app.use((err, req, res, next) => {
     res.status(err.status);
     res.render('error', {error: err})
 });
+
+app.get('/currentThreats', (req, res) => {
+    res.render('currentThreats');
+});
  
