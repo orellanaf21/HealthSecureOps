@@ -26,6 +26,17 @@ mongoose.connect(mongoUri)
 })
 .catch(err=>console.log(err.message));
 
+const path = require('path');
+// Set up the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Define the route
+app.get('/currentThreats', (req, res) => {
+    res.render('currentThreats');
+});
+
+
 //mount middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
