@@ -36,6 +36,19 @@ app.get('/currentThreats', (req, res) => {
     res.render('currentThreats');
 });
 
+app.get('/loggedIncidents', (req, res) => {
+    res.render('loggedIncidents'); // Ensure loggedIncidents.ejs exists in the views folder
+});
+
+app.get('/recommendedMeasures', (req, res) => {
+    res.render('recommendedMeasures'); // Ensure recommendedMeasures.ejs exists in the views folder
+});
+
+app.get('/vulnerabilities', (req, res) => {
+    res.render('vulnerabilities'); // Ensure vulnerabilities.ejs exists in the views folder
+});
+
+
 
 //mount middleware
 app.use(express.static('public'));
