@@ -15,4 +15,10 @@ router.get('/login', controller.showLogin);
 // Handle login form submission
 router.post('/', controller.login);
 
+router.get('/currentThreats', controller.showCurrentThreats);
+
+router.get('/loggedIncidents', controller.showLoggedIncidents);
+
+router.get('/reccomendedMeasures', controller.showRecommendedMeasures);
+
 module.exports = router;

@@ -31,25 +31,6 @@ const path = require('path');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Define the route
-app.get('/currentThreats', (req, res) => {
-    res.render('currentThreats');
-});
-
-app.get('/loggedIncidents', (req, res) => {
-    res.render('loggedIncidents'); // Ensure loggedIncidents.ejs exists in the views folder
-});
-
-app.get('/recommendedMeasures', (req, res) => {
-    res.render('recommendedMeasures'); // Ensure recommendedMeasures.ejs exists in the views folder
-});
-
-app.get('/vulnerabilities', (req, res) => {
-    res.render('vulnerabilities'); // Ensure vulnerabilities.ejs exists in the views folder
-});
-
-
-
 //mount middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));

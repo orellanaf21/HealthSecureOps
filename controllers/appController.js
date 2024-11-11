@@ -32,3 +32,15 @@ exports.login = (req, res) => {
         res.render('./application/login', { error: 'Invalid username or password' });
     }
 };
+
+exports.showCurrentThreats = (req, res, next) => {
+    res.render('./application/currentThreats');
+};
+
+exports.showLoggedIncidents = (req, res, next) => {
+    res.render('./application/loggedIncidents');
+};
+
+exports.showRecommendedMeasures = (req, res, next) => {
+    res.render('./application/recommendedMeasures');
+};
