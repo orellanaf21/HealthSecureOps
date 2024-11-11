@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Threats</title>
+  <link rel="stylesheet" href="../css/currentThreats.css">
 </head>
 <body>
-    <h1>Current Threats</h1>
-    
+  <div class="container">
+    <header>
+      <h1>Current Threats</h1>
+    </header>
+
+    <div class="threat-summary">
+      <div class="threat-card">
+        <div class="icon">
+          <i class="clock-icon">🕒</i>
+        </div>
+        <div class="details">
+          <span class="count">5</span>
+          <span class="label">Threats</span>
+        </div>
+      </div>
+      <div class="alert-card">
+        <span class="alert-title">⚠️ Critical Threat</span>
+        <span class="alert-description">Data is not encrypted in user logging application.</span>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <!-- Placeholder for threat grid items -->
+      <% for (let i = 0; i < 6; i++) { %>
+        <div class="grid-item">
+          <div class="shape-container">
+            <div class="shape triangle"></div>
+            <div class="shape circle"></div>
+            <div class="shape square"></div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
 </body>
 </html>
