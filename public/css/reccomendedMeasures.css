@@ -1,7 +1,8 @@
+/* Set a black background and white text for the entire page */
 body {
     font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f3f3f3;
+    color: white;
+    background-color: black;
   }
   
   .container {
@@ -11,14 +12,16 @@ body {
     padding: 20px;
   }
   
+  /* Other styles remain the same */
   .header {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: white;
   }
   
   .measure-card {
-    background-color: white;
+    background-color: #333; /* Darker gray for card background */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -29,26 +32,29 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: white;
   }
   
-  .measure-card p {
+  .measure-card p,
+  .small-text {
     font-size: 14px;
     line-height: 1.6;
+    color: #ddd; /* Light gray for readability */
   }
   
   .small-text {
-    color: #888;
-    font-size: 12px;
+    color: #bbb; /* Even lighter gray for small text */
   }
   
   .other-warnings {
     font-weight: bold;
     margin: 20px 0;
+    color: white;
   }
   
   .warning-card {
     display: flex;
-    background-color: white;
+    background-color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -69,15 +75,16 @@ body {
   .warning-text h3 {
     font-size: 16px;
     margin: 0;
+    color: white;
   }
   
   .warning-text p {
     font-size: 12px;
-    color: #666;
+    color: #ccc;
   }
   
   .time-info {
     font-size: 12px;
-    color: #999;
+    color: #aaa;
   }
   

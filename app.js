@@ -41,8 +41,8 @@ app.get('/loggedIncidents', (req, res) => {
     res.render('loggedIncidents'); // Ensure loggedIncidents.ejs exists in the views folder
 });
 
-app.get('/recommendedMeasures', (req, res) => {
-    res.render('recommendedMeasures'); // Ensure recommendedMeasures.ejs exists in the views folder
+app.get('/recomendedMeasures', (req, res) => {
+    res.render('recomendedMeasures'); // Ensure recommendedMeasures.ejs exists in the views folder
 });
 
 app.get('/vulnerabilities', (req, res) => {
