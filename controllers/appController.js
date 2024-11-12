@@ -27,8 +27,20 @@ exports.login = (req, res) => {
     if (username === sampleUsername && password === samplePassword) {
         // Set session variable to indicate user is logged in
         req.session.loggedIn = true;
-        res.render('./application/homepage');
+        res.render('./index');
     } else {
         res.render('./application/login', { error: 'Invalid username or password' });
     }
+};
+
+exports.showCurrentThreats = (req, res, next) => {
+    res.render('./application/currentThreats');
+};
+
+exports.showLoggedIncidents = (req, res, next) => {
+    res.render('./application/loggedIncidents');
+};
+
+exports.showRecommendedMeasures = (req, res, next) => {
+    res.render('./application/reccomendedMeasures');
 };

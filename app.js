@@ -31,6 +31,7 @@ const path = require('path');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+<<<<<<< HEAD
 // Define the route
 app.get('/currentThreats', (req, res) => {
     res.render('currentThreats');
@@ -49,6 +50,8 @@ app.get('/vulnerabilities', (req, res) => {
 });
 
 
+=======
+>>>>>>> 9207de16941dec11b9630ce4bb0e2ac561a22e93
 //mount middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
