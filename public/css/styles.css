@@ -14,7 +14,7 @@ body {
   
   header {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #333;
     padding: 20px 10px;
     width: 100%;
     position: fixed;
@@ -29,7 +29,7 @@ body {
   }
   
   header a {
-    color: black;
+    color: white;
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -64,16 +64,18 @@ body {
       border: none;
       outline: none;
       padding: 8px;
-      border-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      color: white;
+      background-color: #060e12;
       flex: 1;
     }
     
     .search-bar button {
       background-color: transparent;
+      color: white;
       border: none;
-      padding: 8px;
       cursor: pointer;
-      border-radius: 20px;
     }
     
   
@@ -113,6 +115,9 @@ main {
   align-items: center;
   height: 100vh;
   width: 100%;
+  padding-top: 160px;
+  color: white;
+  background-color: black;
 }
 
 /*===============================================*/
@@ -121,9 +126,8 @@ main {
 .home-top-section {
   text-align: center;
   width: 50%;
-  background-color: #e6e1e1;
+  background-color: #333;
   border-radius: 10px;
-  box-shadow: 10px 5px 5px rgb(161, 161, 161);
 }
 
 .image-container {
@@ -161,21 +165,20 @@ main {
 
 .content-information {
   text-align: center;
-  background-color: #e6e1e1;
+  background-color: #333;
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 10px 5px 5px rgb(161, 161, 161);
 }
 
 /*===============================================*/
 
-.login-container {
+/* Login Page Styles */
+.form-container {
   width: 90%;
   max-width: 600px;
-  background-color: #e6e1e1;
+  background-color: #333;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .login-title {
@@ -190,7 +193,7 @@ main {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #1f1f1f;
+    color: white;
 }
 
 .form-group input {
@@ -208,7 +211,7 @@ main {
     outline: none;
 }
 
-.login-container input[type="submit"] {
+.form-container input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
@@ -220,109 +223,339 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.login-container input[type="submit"]:hover {
+.form-container input[type="submit"]:hover {
     background-color: #007bbf;
 }
 
-.login-container img {
-    margin: 20px auto;
+/* Logged Incidents Styles */
+.logged-incidents-container {
+  width: 80%;
 }
+
+.logged-incidents-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.summary-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-stats {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.summary-stats h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+}
+
+.filter {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.filter button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.filter button:hover {
+  background-color: #777;
+}
+
+.incident-table {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+
+table th {
+  color: #ffcc00;
+}
+
+table tr:nth-child(even) {
+  background-color: #444;
+}
+
+table tr:nth-child(odd) {
+  background-color: #333;
+}
+
+
+/* Current Threats Styles */
+.current-threats-container {
+  width: 50%;
+}
+
+.threat-summary {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.threat-card {
+  background-color: #333;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.details .count {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.details .label {
+  font-size: 14px;
+}
+
+.alert-card {
+  background-color: #333;
+  color: white;
+  border: 1px solid #777;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 250px;
+}
+
+.alert-title {
+  font-weight: bold;
+  color: #ffcc00; /* Optional: make the alert title stand out with yellow color */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: #444;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shape-container {
+  display: flex;
+  gap: 5px;
+}
+
+.shape {
+  width: 30px;
+  height: 30px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #ccc;
+}
+
+.circle {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.square {
+  background-color: #ccc;
+}
+
+/* Recommended Measures Styles */
+.recommended-measures-container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Other styles remain the same */
+.recommended-measures-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.measure-card {
+  background-color: #333; /* Darker gray for card background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.measure-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.measure-card p,
+.small-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd; /* Light gray for readability */
+}
+
+.small-text {
+  color: #bbb; /* Even lighter gray for small text */
+}
+
+.other-warnings {
+  font-weight: bold;
+  margin: 20px 0;
+  color: white;
+}
+
+.warning-card {
+  display: flex;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.warning-card img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.warning-text {
+  flex: 1;
+}
+
+.warning-text h3 {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+}
+
+.warning-text p {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.time-info {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Forms Page Styles */
+.forms-title {
+  text-align: center;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  color: black;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  color: black;
+  transition: border-color 0.3s ease;
+}
+
 
 /* Footer Styles */
 footer {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  color: white;
+  width: 100%;
+  position: relative;
+  bottom: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
-    display: flex;
-}
-
-.sidebar {
-    width: 200px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-}
-
-.sidebar ul {
-    list-style: none;
-}
-
-.sidebar ul li {
-    margin: 15px 0;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 24px;
-}
-
-.threat-overview {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.clock-icon img {
+.fa {
+    padding: 10px;
+    font-size: 15px;
     width: 30px;
-    height: 30px;
-    vertical-align: middle;
-}
-
-.clock-icon span {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.critical-warning p {
-    color: red;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.threat-boxes {
-    display: flex;
-    gap: 10px;
-}
-
-.box {
-    flex: 1;
-    padding: 20px;
     text-align: center;
-    font-weight: bold;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
     color: white;
-}
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
 
-.red {
-    background-color: red;
-}
-
-.yellow {
-    background-color: yellow;
-    color: black;
-}
-
-.green {
-    background-color: green;
-}
+  .fa-instagram {
+    background: #a63bdb;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }

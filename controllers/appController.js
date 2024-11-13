@@ -1,11 +1,11 @@
-const model = require('../models/information');
+const model = require('../models/logCase');
 //const {upload} = require('./fileUpload');
 
 exports.index = (req, res, next) => {
     let searchQuery = req.query.search;
 
     model.find()
-    .then(items => res.render('index', { items }))
+    .then(cases => res.render('index', { cases }))
     .catch(err => next(err));
 };
 
@@ -44,3 +44,29 @@ exports.showLoggedIncidents = (req, res, next) => {
 exports.showRecommendedMeasures = (req, res, next) => {
     res.render('./application/reccomendedMeasures');
 };
+
+exports.showForms = (req, res, next) => {
+    res.render('./application/forms');
+};
+
+exports.showCases = (req, res, next) => {
+    res.render('./application/checkCases');
+}
+
+exports.createCase = [
+    (req, res, next) => {
+        console.log(req.body); // Check the form data here
+        let logCase = new model(req.body);
+        logCase.save()
+        .then((cases) => {
+            res.redirect('/information/checkCases'); // Use redirect instead of render after form submission
+        })
+        .catch(err => {
+            console.error(err); // Log error for debugging
+            if (err.name === 'ValidationError') {
+                err.status = 400;
+            }
+            next(err);
+        });
+    }
+];

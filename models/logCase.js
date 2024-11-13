@@ -17,4 +17,4 @@ const casesSchema = new Schema({
 { timestamps: true });
 
 //Collection name is items in the database
-module.exports = mongoose.model('Items', casesSchema);
+module.exports = mongoose.model('Cases', casesSchema);
