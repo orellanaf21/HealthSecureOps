@@ -21,4 +21,10 @@ router.get('/loggedIncidents', controller.showLoggedIncidents);
 
 router.get('/reccomendedMeasures', controller.showRecommendedMeasures);
 
+router.get('/forms', controller.showForms);
+
+router.get('/checkCases', controller.showCases);
+
+router.post('/checkCases', controller.createCase);
+
 module.exports = router;

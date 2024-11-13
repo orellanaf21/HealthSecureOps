@@ -1,5 +1,52 @@
 <%- include('../partials/header.ejs')%>
     <main>
-        <h1>Logged Incidents</h1>
+        <div class="logged-incidents-container">
+            <h1 class="logged-incidents-title">Logged Incidents</h1>
+            <div class="summary-section">
+                <div class="summary-stats">
+                    <h2>Summary Stats</h2>
+                    <p>Total Incidents Logged: 8</p>
+                    <p>Total Incidents Resolved: 7</p>
+                    <p>Open Incidents: 1</p>
+                </div>
+        
+                <div class="filters">
+                <div class="filter">
+                    <span>Status Indicators</span>
+                    <button>Pending</button>
+                    <button>Critical</button>
+                    <button>Resolved</button>
+                </div>
+                <div class="filter">
+                    <span>Sort & Filter</span>
+                    <button>Time</button>
+                    <button>Issue</button>
+                    <button>Status</button>
+                </div>
+                </div>
+            </div>
+        
+            <div class="incident-table">
+                <table>
+                <thead>
+                    <tr>
+                    <th>Time-stamp</th>
+                    <th>Issue</th>
+                    <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = 0; i < 10; i++) { %>
+                    <tr>
+                        <td>12:32PM</td>
+                        <td>login attempts</td>
+                        <td><%= i % 3 === 0 ? "Critical" : i % 2 === 0 ? "Pending" : "Resolved" %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
     </main>
 <%- include('../partials/footer.ejs')%>
