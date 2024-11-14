@@ -53,10 +53,17 @@
             });
         </script>
         </div>
-        
+
         <div class="content-information">
             <h4>Open Cases</h4>
+            <% cases.forEach(caseItem => { %>
+                <div class="case-homeInfo-container">
+                    <div class="case-information"><%= caseItem.caseTitle %></div>
+                    <div class="case-information"><%= caseItem.threatType%></div>
+                </div>
+            <% }) %>
         </div>
+        
     </div>
 </main>
 

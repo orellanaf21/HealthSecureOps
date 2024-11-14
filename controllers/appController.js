@@ -2,11 +2,19 @@ const model = require('../models/logCase');
 //const {upload} = require('./fileUpload');
 
 exports.index = (req, res, next) => {
-    let searchQuery = req.query.search;
+    let searchQuery = req.query.search || '';
+    let searchCriteria = {
+        $or: [
+            { caseTitle: {$regex: searchQuery, $options: 'i'} },
+            { details: {$regex: searchQuery, $options: 'i'} }
+        ]
+    }
 
-    model.find()
-    .then(cases => res.render('index', { cases }))
-    .catch(err => next(err));
+    console.log(searchCriteria);
+
+    model.find(searchCriteria)
+        .then(cases => res.render('index', { cases }))
+        .catch(err => next(err));
 };
 
 exports.enterAccessCode = (req, res) => {
