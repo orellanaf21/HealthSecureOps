@@ -1,5 +1,23 @@
-<%- include('../partials/header.ejs')%>
-    <main>
+<%- include('../partials/header.ejs') %>
+<main>
+    <div class="check-cases-container">
         <h1>Cases</h1>
-    </main>
-<%- include('../partials/footer.ejs')%>
+        <% if (cases.length) {
+            cases.forEach(currentCase => { %>
+                <div class="cases-card">
+                    <div class="cases-content">
+                        <div class="cases-text">
+                            <h3 class="cases-title"><%= currentCase.caseTitle %></h3>
+                            <h5>Threat Level: <%= currentCase.threatType%></h5>
+                            <p><%= currentCase.details %></p>
+                        </div>
+                        <div class="time-info"><%= currentCase.createdAt.toLocaleString()%></div>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <h2>There are no cases to display</h2>
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/footer.ejs') %>

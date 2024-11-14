@@ -50,19 +50,19 @@ exports.showForms = (req, res, next) => {
 };
 
 exports.showCases = (req, res, next) => {
-    res.render('./application/checkCases');
+    model.find()
+    .then(cases => res.render('./application/checkCases', {cases}))
+    .catch(err=>next(err));
 }
 
 exports.createCase = [
     (req, res, next) => {
-        console.log(req.body); // Check the form data here
         let logCase = new model(req.body);
         logCase.save()
         .then((cases) => {
-            res.redirect('/information/checkCases'); // Use redirect instead of render after form submission
+            res.redirect('/information/checkCases');
         })
         .catch(err => {
-            console.error(err); // Log error for debugging
             if (err.name === 'ValidationError') {
                 err.status = 400;
             }

@@ -125,7 +125,7 @@ main {
 /* Home Page Styles */
 .home-top-section {
   text-align: center;
-  width: 50%;
+  width: 60%;
   background-color: #333;
   border-radius: 10px;
 }
@@ -514,6 +514,63 @@ table tr:nth-child(odd) {
   transition: border-color 0.3s ease;
 }
 
+/* Check Cases Styles */
+.check-cases-container {
+  width: 50%;
+}
+
+.cases-content {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  text-align: center;
+  flex: 1;
+}
+
+.cases-text {
+  display: flex;
+  flex-flow: column;
+  text-align: left;
+  gap: 5px;
+}
+
+.cases-content .cases-title {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.cases-content h3 {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+}
+
+.cases-content p {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.cases-card {
+  background-color: #333; /* Darker gray for card background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cases-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.cases-card p,
+.small-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd; /* Light gray for readability */
+}
 
 /* Footer Styles */
 footer {
