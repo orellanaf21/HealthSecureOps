@@ -170,6 +170,19 @@ main {
   padding: 10px;
 }
 
+.case-homeInfo-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.case-information {
+  padding: 10px;
+  font-size: smaller;
+  font-weight: bold;
+}
+
 /*===============================================*/
 
 /* Login Page Styles */
