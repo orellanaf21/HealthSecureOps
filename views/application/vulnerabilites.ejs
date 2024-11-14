@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs')%>
+
+<main>
+    <div class="vulnerabilities-container">
+        <h1>Vulnerabilities</h1>
+    
+        <div class="vulnerability-summary">
+          <div class="vulnerability-card">
+            <div class="icon">
+              <i class="shield-icon">🛡️</i>
+            </div>
+            <div class="details">
+              <span class="count">8</span>
+              <span class="label">Vulnerabilities</span>
+            </div>
+          </div>
+          <div class="alert-card">
+            <span class="alert-title">Vulnerabilities</span>
+            <span class="alert-description">Weak password policies in admin login module.</span>
+          </div>
+        </div>
+    
+        <div class="grid-container">
+          <!-- Placeholder for vulnerability grid items -->
+          <% for (let i = 0; i < 6; i++) { %>
+            <div class="grid-item">
+              <div class="vulnerability-details">
+                <h3>Vulnerability <%= i + 1 %></h3>
+                <p>Description of vulnerability <%= i + 1 %>: Potential risk due to outdated libraries.</p>
+                <div class="severity-info">
+                  <span class="severity-label">Severity:</span> <span class="severity-level">High</span>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+</main>
+
+<%- include('../partials/footer.ejs')%>
