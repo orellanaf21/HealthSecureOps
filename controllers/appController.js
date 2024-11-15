@@ -26,20 +26,31 @@ exports.showLogin = (req, res) => {
     res.render('./application/login');
 };
 
-exports.login = (req, res) => {
+exports.login = (req, res, next) => {
     const { username, password } = req.body;
 
     const sampleUsername = 'user123';
     const samplePassword = 'password';
 
     if (username === sampleUsername && password === samplePassword) {
-        // Set session variable to indicate user is logged in
         req.session.loggedIn = true;
-        res.render('./index');
+
+        let searchQuery = req.query.search || '';
+        let searchCriteria = {
+            $or: [
+                { caseTitle: { $regex: searchQuery, $options: 'i' } },
+                { details: { $regex: searchQuery, $options: 'i' } }
+            ]
+        };
+
+        model.find(searchCriteria)
+            .then(cases => res.render('./index', { cases }))
+            .catch(err => next(err));
     } else {
         res.render('./application/login', { error: 'Invalid username or password' });
     }
 };
+
 
 exports.showCurrentThreats = (req, res, next) => {
     res.render('./application/currentThreats');
