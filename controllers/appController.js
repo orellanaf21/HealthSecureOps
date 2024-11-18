@@ -2,18 +2,8 @@ const model = require('../models/logCase');
 //const {upload} = require('./fileUpload');
 
 exports.index = (req, res, next) => {
-    let searchQuery = req.query.search || '';
-    let searchCriteria = {
-        $or: [
-            { caseTitle: {$regex: searchQuery, $options: 'i'} },
-            { details: {$regex: searchQuery, $options: 'i'} }
-        ]
-    }
-
-    console.log(searchCriteria);
-
-    model.find(searchCriteria)
-        .then(cases => res.render('index', { cases }))
+    model.find()
+        .then(cases => res.render('./index', { cases }))
         .catch(err => next(err));
 };
 
@@ -35,15 +25,7 @@ exports.login = (req, res, next) => {
     if (username === sampleUsername && password === samplePassword) {
         req.session.loggedIn = true;
 
-        let searchQuery = req.query.search || '';
-        let searchCriteria = {
-            $or: [
-                { caseTitle: { $regex: searchQuery, $options: 'i' } },
-                { details: { $regex: searchQuery, $options: 'i' } }
-            ]
-        };
-
-        model.find(searchCriteria)
+        model.find()
             .then(cases => res.render('./index', { cases }))
             .catch(err => next(err));
     } else {
@@ -69,10 +51,20 @@ exports.showForms = (req, res, next) => {
 };
 
 exports.showCases = (req, res, next) => {
-    model.find()
-    .then(cases => res.render('./application/checkCases', {cases}))
-    .catch(err=>next(err));
-}
+    let searchQuery = req.query.search?.trim() || '';
+    let searchCriteria = searchQuery
+        ? {
+            $or: [
+                { caseTitle: { $regex: searchQuery, $options: 'i' } },
+                { details: { $regex: searchQuery, $options: 'i' } }
+            ]
+        }
+        : {}; // Match all cases if no search query
+
+    model.find(searchCriteria)
+        .then(cases => res.render('./application/checkCases', { cases }))
+        .catch(err => next(err));
+};
 
 exports.createCase = [
     (req, res, next) => {
@@ -89,3 +81,25 @@ exports.createCase = [
         });
     }
 ];
+
+exports.resolveCase = (req, res, next) => {
+    let id = req.params.id;
+
+    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
+        let err = new Error('Invalid item id');
+        err.status = 400;
+        return next(err);
+    }
+
+    model.findByIdAndDelete(id, {useFindAndModify: false})
+    .then(cases => {
+        if(cases) {
+            res.redirect('/information/checkCases');
+        } else {
+            let err = new Error('Cannot find an item with id ' + id);
+            err.status = 404;
+            next(err);
+        }
+    })
+    .catch(err=>next(err));
+};

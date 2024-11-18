@@ -27,4 +27,6 @@ router.get('/checkCases', controller.showCases);
 
 router.post('/checkCases', controller.createCase);
 
+router.delete('/checkCases/:id', controller.resolveCase);
+
 module.exports = router;

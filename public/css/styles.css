@@ -585,6 +585,24 @@ table tr:nth-child(odd) {
   color: #ddd; /* Light gray for readability */
 }
 
+.cases-other-info-container {
+  display: flex;
+  flex-flow: column;
+  gap: 5rem;
+}
+
+.delete-button {
+  cursor: pointer;
+  background-color: #2f5dc1;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.delete-button:hover {
+  background-color: #007bbf;
+}
+
 /* Footer Styles */
 footer {
   padding: 1rem;

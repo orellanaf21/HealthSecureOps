@@ -1,4 +1,5 @@
 <%- include('../partials/header.ejs') %>
+
 <main>
     <div class="check-cases-container">
         <h1>Cases</h1>
@@ -8,10 +9,17 @@
                     <div class="cases-content">
                         <div class="cases-text">
                             <h3 class="cases-title"><%= currentCase.caseTitle %></h3>
-                            <h5>Threat Level: <%= currentCase.threatType%></h5>
+                            <h5>Threat Level: <%= currentCase.threatType %></h5>
                             <p><%= currentCase.details %></p>
                         </div>
-                        <div class="time-info"><%= currentCase.createdAt.toLocaleString()%></div>
+                        <div class="cases-other-info-container">
+                            <div class="time-info"><%= currentCase.createdAt.toLocaleString() %></div>
+                            <form method="POST" action="/information/checkCases/<%= currentCase._id %>?_method=DELETE">
+                                <button class="delete-button" type="submit">
+                                    <i class="fa fa-solid fa-check"></i> Resolve Case
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             <% }); %>
@@ -20,4 +28,5 @@
         <% } %>
     </div>
 </main>
+
 <%- include('../partials/footer.ejs') %>
