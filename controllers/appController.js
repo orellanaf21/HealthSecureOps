@@ -88,7 +88,15 @@ exports.showLoggedIncidents = (req, res, next) => {
 };
 
 exports.showRecommendedMeasures = (req, res, next) => {
-    res.render('./application/reccomendedMeasures');
+    const recommendedMeasures = [
+        { id: 1, title: "Add File Hashing API", details: "The application does not currently support hashing for files which can be detrimental towards the security of the users.", recommendation: "It is recommended to integrate a file hashing API to avoid data to be viewed by cyberattackers."},
+        { id: 2, title: "Reduce API calls usage", details: "Currently the application is using many API calls per hour, which is getting every time closer to it's limit. Which can limit application usage", recommendation: "Add methods and middleware functions to make API calls more efficient."},
+        { id: 3, title: "Add Promise functions to database queries", details: "The middleware functions of the application are not using the promise functions to retrieve data from the database. Which causes that the data is not being displayed.", recommendation: "Add promise functions to the middleware functions of the application files."},
+        { id: 4, title: "Create a two step verification for user login", details: "There is no current Two step verification for user login in the user application.", recommendation: "Develop a two step verification program that will help enhance the security of the application and to users."},
+        { id: 5, title: "Servers Require Update", details: "There has been an update that is availabe for servers.", recommendation: "Make sure to update servers accordingly with new update. This includes the latest security features for the server and application."},
+        { id: 6, title: "Modify the logs in user activity", details: "There needs to be a modification in how the logs are handling the data in user activity, as it is not properly recording if a user is attempting to login to an account multiple times.", recommendation: "Make an update on the log activity methods to make sure user activity is being logged properly."}
+    ];
+    res.render('./application/reccomendedMeasures', { recommendedMeasures });
 };
 
 exports.showForms = (req, res, next) => {

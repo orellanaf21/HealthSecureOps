@@ -58,13 +58,13 @@
 
         <div class="content-information">
             <h4>Open Cases</h4>
-            <% if (cases && cases.length > 0) { %>
-                <% cases.forEach(caseItem => { %>
+            <% if (cases.length > 0) { %>
+                <% for(let i = 0; i < Math.min(cases.length, 4); i++) { %>
                     <div class="case-homeInfo-container">
-                        <div class="case-information"><%= caseItem.caseTitle %></div>
-                        <div class="case-information"><%= caseItem.threatType %></div>
+                        <div class="case-information"><%= cases[i].caseTitle %></div>
+                        <div class="case-information"><%= cases[i].threatType %></div>
                     </div>
-                <% }) %>
+                <% } %>                
             <% } else { %>
                 <p>No cases available</p>
             <% } %>            

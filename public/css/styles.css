@@ -363,6 +363,9 @@ table tr:nth-child(odd) {
 }
 
 .alert-card {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
   background-color: #333;
   color: white;
   border: 1px solid #777;
@@ -373,7 +376,7 @@ table tr:nth-child(odd) {
 
 .alert-title {
   font-weight: bold;
-  color: #ffcc00; /* Optional: make the alert title stand out with yellow color */
+  color: #d14734;
 }
 
 .grid-container {
