@@ -328,7 +328,7 @@ table tr:nth-child(odd) {
 
 /* Current Threats Styles */
 .current-threats-container {
-  width: 50%;
+  width: 70%;
 }
 
 .threat-summary {
@@ -345,12 +345,12 @@ table tr:nth-child(odd) {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 150px;
   text-align: center;
 }
 
-.icon {
-  font-size: 24px;
+.details {
+  display: flex;
+  flex-flow: column;
 }
 
 .details .count {
@@ -359,7 +359,7 @@ table tr:nth-child(odd) {
 }
 
 .details .label {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .alert-card {
@@ -393,7 +393,7 @@ table tr:nth-child(odd) {
 
 .shape-container {
   display: flex;
-  gap: 5px;
+  gap: 70px;
 }
 
 .shape {
@@ -601,6 +601,11 @@ table tr:nth-child(odd) {
 
 .delete-button:hover {
   background-color: #007bbf;
+}
+
+.threat-type {
+  color: #ffcc00;
+  font-weight: bold;
 }
 
 /* Footer Styles */

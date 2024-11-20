@@ -35,7 +35,52 @@ exports.login = (req, res, next) => {
 
 
 exports.showCurrentThreats = (req, res, next) => {
-    res.render('./application/currentThreats');
+    let randomNum = Math.floor((Math.random() * 10) + 1);
+    let randomNum2 = Math.floor((Math.random() * 10) + 1);
+    let randomNum3 = Math.floor((Math.random() * 10) + 1);
+    let randomNum4 = Math.floor((Math.random() * 10) + 1);
+    let randomNum5 = Math.floor((Math.random() * 10) + 1);
+    let randomNum6 = Math.floor((Math.random() * 10) + 1);
+
+    const currentThreats = [];
+
+    if (randomNum === 1) {
+        currentThreats.push({ title: "Application Update Pending", type: "Non-Urgent" });
+    } else {
+        currentThreats.push({ title: "Data Tunnes do not Encrypt Data", type: "Urgent"});
+    }
+
+    if (randomNum2 === 2) {
+        currentThreats.push({ title: "Web Application Server requires Update", type: "Non-Urgent"});
+    } else {
+        currentThreats.push({ title: "Application missing log information", type: "Urgent"});
+    }
+
+    if (randomNum3 === 3) {
+        currentThreats.push({ title: "API calls are close to reaching it's daily limit", type: "Medium"});
+    } else {
+        currentThreats.push({ title: "Password encrypter requires update", type: "Critical"});
+    }
+
+    if (randomNum4 === 4) {
+        currentThreats.push({ title: "Database Data is not Synching properly", type: "Medium"});
+    } else {
+        currentThreats.push({ title: "Two Step Verification Missing", type: "Critical"});
+    }
+
+    if (randomNum5 === 5) {
+        currentThreats.push({ title: "User information is not stored properly", type: "Medium"});
+    } else {
+        currentThreats.push({ title: "Server not responding to request", type: "Critical"});
+    }
+
+    if (randomNum6 === 6) {
+        currentThreats.push({ title: "Server response time is delayed", type: "Non-Urgent"});
+    } else {
+        currentThreats.push({ title: "Cloud Service data is not synched correctly with server ", type: "Medium"});
+    }
+
+    res.render('./application/currentThreats', { currentThreats });
 };
 
 exports.showLoggedIncidents = (req, res, next) => {
